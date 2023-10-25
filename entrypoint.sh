@@ -35,9 +35,10 @@ python_version="${PYTHON_VERSION:-3}"
 msg "Updating container..."
 apt update && apt upgrade -y
 msg "Installing essential packages..."
-apt install -y --no-install-recommends git make bc bison openssl \
-    curl zip kmod cpio flex libelf-dev libssl-dev libtfm-dev wget gcc \
-    device-tree-compiler ca-certificates python3 python2 xz-utils build-essential
+apt -y install gcc llvm lld python2 clang gcc-aarch64-linux-gnu git libxml2 repo device-tree-compiler \
+default-jre automake lzop bison gperf build-essential zip curl zlib1g-dev libxml2-utils bzip2 libbz2-dev libbz2-1.0 libghc-bzlib-dev \
+squashfs-tools pngcrush schedtool dpkg-dev liblz4-tool make cpio optipng bc libstdc++6 libncurses5 wget python3 python3-pip libssl-dev rsync flex git-lfs libz3-dev libz3-4 axel tar \
+binutils-dev ca-certificates ccache cmake file libelf-dev ninja-build python3-dev texinfo u-boot-tools xz-utils libarchive-tools software-properties-common build-essential python-is-python3 libssl-dev openssl ssh
 cd /
 git clone https://github.com/ucip123/liquid_kernel_realme_even
 git config --global --add safe.directory /github/workspace
