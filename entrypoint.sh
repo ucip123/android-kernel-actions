@@ -199,7 +199,9 @@ else
     exit 100
 fi
 
-cd /liquid_kernel_realme_even || exit 127
+cd /
+mkdir liquid
+mv /liquid_kernel_realme_even /liquid || exit 127
 start_time="$(date +%s)"
 date="$(date +%d%m%Y-%I%M)"
 tag="$(git branch | sed 's/*\ //g')"
