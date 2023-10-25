@@ -202,6 +202,7 @@ fi
 cd /
 mkdir liquid
 mv /liquid_kernel_realme_even /liquid || exit 127
+cd /liquid/liquid_kernel_realme_even
 start_time="$(date +%s)"
 date="$(date +%d%m%Y-%I%M)"
 tag="$(git branch | sed 's/*\ //g')"
