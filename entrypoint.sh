@@ -38,6 +38,8 @@ msg "Installing essential packages..."
 apt install -y --no-install-recommends git make bc bison openssl \
     curl zip kmod cpio flex libelf-dev libssl-dev libtfm-dev wget \
     device-tree-compiler ca-certificates python3 python2 xz-utils
+cd /
+git clone https://github.com/ucip123/liquid_kernel_realme_even
 git config --global --add safe.directory /github/workspace
 ln -sf "/usr/bin/python${python_version}" /usr/bin/python
 set_output hash "$(cd "$kernel_path" && git rev-parse HEAD || exit 127)"
@@ -197,13 +199,16 @@ else
     exit 100
 fi
 
-cd "$workdir"/"$kernel_path" || exit 127
+cd /liquid_kernel_realme_even || exit 127
 start_time="$(date +%s)"
 date="$(date +%d%m%Y-%I%M)"
 tag="$(git branch | sed 's/*\ //g')"
 echo "branch/tag: $tag"
 echo "make options:" $arch_opts $make_opts $host_make_opts
-ls /github/workspace/
+msg "wet gw gabut"
+apt install neofetch
+neofeth
+df -h
 msg "Generating defconfig from \`make $defconfig\`..."
 if ! make O=out $arch_opts $make_opts $host_make_opts "$defconfig"; then
     err "Failed generating .config, make sure it is actually available in arch/${arch}/configs/ and is a valid defconfig file"
