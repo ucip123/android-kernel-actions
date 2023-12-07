@@ -214,6 +214,8 @@ apt install neofetch -y
 neofetch
 df -h
 ls arch/arm64/configs
+git submodule init
+git submodule update
 msg "Generating defconfig from \`make $defconfig\`..."
 if ! make O=out ARCH=arm64 even_defconfig ; then
     err "Failed generating .config, make sure it is actually available in arch/${arch}/configs/ and is a valid defconfig file"
